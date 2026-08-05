@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Secret Message ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff6b81,#ff8fab,#ffc2d1);
+overflow:hidden;
+}
+
+#envelope{
+width:320px;
+height:220px;
+background:#fff;
+position:relative;
+border-radius:10px;
+cursor:pointer;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+transition:.8s;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+#envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+clip-path:polygon(0 0,50% 55%,100% 0);
+background:#ffd6de;
+}
+
+#cover{
+position:absolute;
+z-index:5;
+color:#444;
+font-size:24px;
+font-weight:bold;
+}
+
+#letter{
+position:absolute;
+width:90%;
+max-width:520px;
+padding:35px;
+background:white;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+display:none;
+text-align:center;
+animation:fade .8s;
+}
+
+#letter h1{
+color:#ff4f81;
+margin-bottom:15px;
+}
+
+#letter p{
+font-size:20px;
+line-height:1.8;
+color:#555;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+background:#ff4f81;
+color:white;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+#final{
+display:none;
+text-align:center;
+color:white;
+animation:fade 1s;
+}
+
+#final h1{
+font-size:55px;
+}
+
+#final p{
+font-size:24px;
+margin-top:20px;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:25px;
+animation:float 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+from{transform:translateY(100vh);}
+to{transform:translateY(-120vh);}
+}
+
+@keyframes fade{
+from{opacity:0;transform:scale(.9);}
+to{opacity:1;transform:scale(1);}
+}
+</style>
+
+</head>
+<body>
+
+<div id="envelope" onclick="openLetter()">
+<div id="cover">
+💌<br><br>
+To:<br>
+<b>APARNA ❤️</b><br><br>
+Tap to Open
+</div>
+</div>
+
+<div id="letter">
+
+<h1>My Dearest Aparna ❤️</h1>
+
+<p>
+
+I don't have a long story to tell today...
+
+<br><br>
+
+I just wanted to remind you of one simple thing...
+
+<br><br>
+
+❤️ <b>I MISS YOU A LOT.</b> ❤️
+
+<br><br>
+
+Every smile reminds me of you.
+
+Every heartbeat whispers your name.
+
+Every day feels incomplete without you.
+
+<br><br>
+
+If you're reading this...
+
+Please smile... 😊
+
+Because someone is thinking about you right now.
+
+<br><br>
+
+Forever Yours,
+
+<br><br>
+
+❤️ <b>SONU</b> ❤️
+
+</p>
+
+<button onclick="showFinal()">❤️ Tap Here ❤️</button>
+
+</div>
+
+<div id="final">
+
+<h1>❤️</h1>
+
+<p>
+
+Can't wait to see you again...
+
+<br><br>
+
+You Mean Everything To Me.
+
+<br><br>
+
+❤️ SONU ❤️
+
+</p>
+
+</div>
+
+<script>
+
+function openLetter(){
+
+document.getElementById("envelope").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+}
+
+function showFinal(){
+
+document.getElementById("letter").style.display="none";
+
+document.getElementById("final").style.display="block";
+
+}
+
+for(let i=0;i<35;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+h.style.animationDuration=(5+Math.random()*6)+"s";
+
+h.style.animationDelay=(-Math.random()*8)+"s";
+
+document.body.appendChild(h);
+
+}
+
+</script>
+
+</body>
+</html>
